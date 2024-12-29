@@ -1,5 +1,5 @@
 export default {
-  plugins: ["prettier-plugin-tailwindcss", "@trivago/prettier-plugin-sort-imports"],
+  plugins: ["@trivago/prettier-plugin-sort-imports", "prettier-plugin-tailwindcss"],
   tailwindConfig: "./tailwind.config.ts",
   tabWidth: 2,
   printWidth: 120,
@@ -13,7 +13,7 @@ export default {
   singleQuote: false,
   trailingComma: "es5",
   singleAttributePerLine: true,
-  importOrder: ["^react", "^next", "<THIRD_PARTY_MODULES>", "^@/components", "^@/utils", "^[./]", "^[../]", "\\.css$"],
+  importOrder: ["^react$", "^next", "<THIRD_PARTY_MODULES>", "^@/(.*)$", "^[./]"],
   importOrderSeparation: false,
   importOrderSortSpecifiers: true,
   importOrderCaseInsensitive: true,

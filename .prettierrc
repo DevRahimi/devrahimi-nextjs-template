@@ -13,16 +13,7 @@
   "singleQuote": false,
   "trailingComma": "es5",
   "singleAttributePerLine": true,
-  "importOrder": [
-    "^react",
-    "^next",
-    "<THIRD_PARTY_MODULES>",
-    "^@/components",
-    "^@/utils",
-    "^[./]",
-    "^[../]",
-    "\\.css$"
-  ],
+  "importOrder": ["^react$", "^next", "<THIRD_PARTY_MODULES>", "^@/(.*)$", "^[./]"],
   "importOrderSeparation": false,
   "importOrderSortSpecifiers": true,
   "importOrderCaseInsensitive": true
