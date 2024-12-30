@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 
 export default function Home() {
-  const [_test, setTest] = useState(false);
+  const [_test, _setTest] = useState(false);
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-24">
