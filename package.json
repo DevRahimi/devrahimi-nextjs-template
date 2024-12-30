@@ -15,6 +15,7 @@
     "lint": "bun run format && FORCE_COLOR=1 next lint --config .eslintrc.json",
     "lint-fix": "bun run format && FORCE_COLOR=1 next lint --config .eslintrc.json --fix",
     "format": "prettier . --write --config-precedence prefer-file .prettierrc.json",
+    "check-format": "prettier . --check --config-precedence prefer-file .prettierrc.json",
     "prepare": "husky",
     "info": "next info"
   },
