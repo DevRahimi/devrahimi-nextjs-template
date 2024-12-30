@@ -9,9 +9,9 @@
     "npm": "please-use-bun"
   },
   "scripts": {
-    "dev": "bun run format && next dev --turbopack",
+    "dev": "next dev --turbopack",
     "build": "bun run format && FORCE_COLOR=1 next build --debug",
-    "start": "bun run format && next start --port 3001",
+    "start": "next start --port 3001",
     "lint": "bun run format && FORCE_COLOR=1 next lint --config .eslintrc.json",
     "lint-fix": "bun run format && FORCE_COLOR=1 next lint --config .eslintrc.json --fix",
     "format": "prettier . --write --config-precedence prefer-file .prettierrc.json",
