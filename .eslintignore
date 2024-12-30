@@ -1,9 +1,10 @@
-*.css
+.next
+.vercel
 dist
+node_modules
+build
 public/*
+.DS_Store
+*.css
 *.config.js
 *.config.ts
-.DS_Store
-node_modules
-.next
-build

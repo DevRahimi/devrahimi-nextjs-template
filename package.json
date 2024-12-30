@@ -9,12 +9,14 @@
     "npm": "please-use-bun"
   },
   "scripts": {
-    "dev": "bun run format && next dev",
-    "build": "bun run format && next build",
-    "start": "bun run format && next start",
-    "lint": "next lint",
-    "format": "prettier --write .",
-    "prepare": "husky"
+    "dev": "bun run format && next dev --turbopack",
+    "build": "bun run format && FORCE_COLOR=1 next build --debug",
+    "start": "bun run format && next start --port 3001",
+    "lint": "bun run format && FORCE_COLOR=1 next lint --config .eslintrc.json",
+    "lint-fix": "bun run format && FORCE_COLOR=1 next lint --config .eslintrc.json --fix",
+    "format": "prettier . --write --config-precedence prefer-file .prettierrc.json",
+    "prepare": "husky",
+    "info": "next info"
   },
   "dependencies": {
     "next": "^15.1.3",

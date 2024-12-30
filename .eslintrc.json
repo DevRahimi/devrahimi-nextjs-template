@@ -1,10 +1,26 @@
 {
-  "extends": ["next", "next/core-web-vitals", "eslint:recommended"],
+  "extends": ["next", "next/core-web-vitals", "eslint:recommended", "prettier"],
+  "plugins": [
+    "prettier"
+    // "@stylistic"
+  ],
   "globals": {
     "React": "readonly"
   },
   "rules": {
-    "no-console": 1,
-    "no-unused-vars": 1
+    "no-console": "warn",
+    "no-unused-vars": [
+      "warn",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_"
+      }
+    ],
+    "no-multiple-empty-lines": "warn",
+    "semi": "warn",
+    "quotes": ["warn", "double"],
+    "prefer-arrow-callback": "warn"
+    // "comma-spacing": "warn",
+    // "comma-dangle": "off"
   }
 }

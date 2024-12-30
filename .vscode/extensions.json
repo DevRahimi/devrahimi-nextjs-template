@@ -1,0 +1,14 @@
+{
+  "recommendations": [
+    "ms-vscode.vscode-typescript-next",
+    "yoavbls.pretty-ts-errors",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "bradlc.vscode-tailwindcss",
+    "formulahendry.auto-rename-tag",
+    "vincaslt.highlight-matching-tag",
+    "naumovs.color-highlight",
+    "aaron-bond.better-comments",
+    "wayou.vscode-todo-highlight"
+  ]
+}
