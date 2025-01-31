@@ -10,10 +10,10 @@
   },
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "bun run format && FORCE_COLOR=1 next build --debug",
+    "build": "FORCE_COLOR=1 next build --debug",
     "start": "next start --port 3001",
-    "lint": "bun run format && FORCE_COLOR=1 next lint --max-warnings=0 --config .eslintrc.json",
-    "lint-fix": "bun run format && FORCE_COLOR=1 next lint --max-warnings=0 --config .eslintrc.json --fix",
+    "lint": "FORCE_COLOR=1 next lint --max-warnings=0 --config .eslintrc.json",
+    "lint-fix": "FORCE_COLOR=1 next lint --max-warnings=0 --config .eslintrc.json --fix",
     "format": "prettier . --write --config-precedence prefer-file .prettierrc.json",
     "check-format": "prettier . --check --config-precedence prefer-file .prettierrc.json",
     "prepare": "husky",
