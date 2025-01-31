@@ -10,13 +10,13 @@
   },
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "FORCE_COLOR=1 next build --debug",
+    "build": "bun run format:changed && FORCE_COLOR=1 next build --debug",
     "start": "next start --port 3001",
     "lint": "FORCE_COLOR=1 next lint --max-warnings=0 --config .eslintrc.json",
     "lint-fix": "FORCE_COLOR=1 next lint --max-warnings=0 --config .eslintrc.json --fix",
     "format": "prettier . --write --config-precedence prefer-file .prettierrc.json",
     "format:changed": "git diff --name-only | grep -E '\\.(js|ts|jsx|tsx|css|html|json)$' | xargs prettier --write",
-    "check-format": "prettier . --check --config-precedence prefer-file .prettierrc.json",
+    "format:check": "prettier . --check --config-precedence prefer-file .prettierrc.json",
     "prepare": "husky",
     "info": "next info"
   },
