@@ -10,7 +10,7 @@
   },
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "bun run format && FORCE_COLOR=1 next build --debug",
+    "build": "FORCE_COLOR=1 next build --debug",
     "start": "next start --port 3001",
     "lint": "FORCE_COLOR=1 next lint --max-warnings=0 --config eslint.config.mjs",
     "lint-fix": "FORCE_COLOR=1 next lint --max-warnings=0 --config eslint.config.mjs --fix",
