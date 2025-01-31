@@ -19,6 +19,18 @@ const eslintConfig = [
       React: "readonly",
     },
     extends: ["next", "next/core-web-vitals", "next/typescript", "eslint:recommended", "prettier"],
+    ignorePatterns: [
+      ".next",
+      ".vercel",
+      "dist",
+      "node_modules",
+      "build",
+      "public/*",
+      ".DS_Store",
+      "*.css",
+      "*.config.js",
+      "*.config.ts",
+    ],
     plugins: [
       // "@stylistic"
     ],
