@@ -17,4 +17,4 @@ if [ $? -eq 0 ]; then
 fi
 
 BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD)
-echo "\033[0;35mCommitting changes to branch: '$BRANCH_NAME'...\033[0m"
+echo "\033[0;35mCommitting changes to branch: '$BRANCH_NAME'\033[0m"
