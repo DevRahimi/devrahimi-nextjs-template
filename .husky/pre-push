@@ -17,6 +17,4 @@ if [ $? -eq 0 ]; then
 fi
 
 BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD)
-echo "\033[0;35mAll checks passed. Pushing to remote branch: '$BRANCH_NAME'.\033[0m"
-
-exit 1
+echo "\033[0;35mAll checks passed. Pushing to remote branch: '$BRANCH_NAME'\033[0m"
