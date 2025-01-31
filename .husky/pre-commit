@@ -1,4 +1,4 @@
-bun run format:changed
+bun run format
 if [ $? -ne 0 ]; then
   echo "\033[0;31mFormatting failed. Commit aborted.\033[0m"
   exit 1
