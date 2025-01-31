@@ -10,38 +10,36 @@
   },
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "bun run format:changed && FORCE_COLOR=1 next build --debug",
+    "build": "bun run format && FORCE_COLOR=1 next build --debug",
     "start": "next start --port 3001",
-    "lint": "FORCE_COLOR=1 next lint --max-warnings=0 --config .eslintrc.json",
-    "lint-fix": "FORCE_COLOR=1 next lint --max-warnings=0 --config .eslintrc.json --fix",
-    "format": "prettier . --write --config-precedence prefer-file .prettierrc.json",
-    "format:changed": "git diff --name-only | grep -E '\\.(js|ts|jsx|tsx|css|html|json)$' | xargs prettier --write",
-    "format:check": "prettier . --check --config-precedence prefer-file .prettierrc.json",
+    "lint": "FORCE_COLOR=1 next lint --max-warnings=0 --config eslint.config.mjs",
+    "lint-fix": "FORCE_COLOR=1 next lint --max-warnings=0 --config eslint.config.mjs --fix",
+    "format": "prettier . --write --config-precedence prefer-file prettier.config.mjs",
+    "format:check": "prettier . --check --config-precedence prefer-file prettier.config.mjs",
     "prepare": "husky",
     "info": "next info"
   },
   "dependencies": {
-    "next": "^15.1.6",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "next": "15.1.6"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.6.1",
     "@commitlint/config-conventional": "^19.6.0",
-    "@tailwindcss/postcss": "^4.0.0",
-    "@trivago/prettier-plugin-sort-imports": "^4.3.0",
-    "@types/node": "^20.17.16",
-    "@types/react": "^18.3.18",
-    "@types/react-dom": "^18.3.5",
-    "eslint": "^8.57.1",
-    "eslint-config-next": "14.2.3",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-prettier": "^5.2.3",
+    "@eslint/eslintrc": "^3",
+    "@trivago/prettier-plugin-sort-imports": "^5.2.2",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.1.6",
+    "eslint-config-prettier": "^10.0.1",
     "husky": "^9.1.7",
-    "prettier": "^3.4.2",
+    "postcss": "^8",
+    "prettier": "3.4.2",
     "prettier-plugin-tailwindcss": "^0.6.11",
-    "tailwindcss": "^4.0.0",
-    "typescript": "^5.7.3",
-    "typescript-eslint": "^8.21.0"
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
   }
 }
