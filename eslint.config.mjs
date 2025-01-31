@@ -1,6 +1,5 @@
 import { FlatCompat } from "@eslint/eslintrc";
 import js from "@eslint/js";
-import eslintConfigPrettier from "eslint-config-prettier";
 import { dirname } from "path";
 import { fileURLToPath } from "url";
 
@@ -18,7 +17,7 @@ const eslintConfig = [
     globals: {
       React: "readonly",
     },
-    extends: ["next", "next/core-web-vitals", "next/typescript", "eslint:recommended", "prettier"],
+    extends: ["next", "next/core-web-vitals", "next/typescript", "eslint:recommended"],
     ignorePatterns: [
       ".next",
       ".vercel",
@@ -51,7 +50,6 @@ const eslintConfig = [
       // "comma-dangle": "off"
     },
   }),
-  eslintConfigPrettier,
 ];
 
 export default eslintConfig;
