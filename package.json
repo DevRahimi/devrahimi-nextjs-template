@@ -10,10 +10,10 @@
   },
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "FORCE_COLOR=1 next build --debug",
+    "build": "next build --debug",
     "start": "next start --port 3001",
-    "lint": "FORCE_COLOR=1 next lint --max-warnings=0 --config eslint.config.mjs",
-    "lint-fix": "FORCE_COLOR=1 next lint --max-warnings=0 --config eslint.config.mjs --fix",
+    "lint": "next lint --max-warnings=0 --config eslint.config.mjs",
+    "lint-fix": "next lint --max-warnings=0 --config eslint.config.mjs --fix",
     "format": "prettier . --write --config-precedence prefer-file prettier.config.mjs",
     "format:check": "prettier . --check --config-precedence prefer-file prettier.config.mjs",
     "prepare": "husky",
@@ -24,8 +24,7 @@
     "next": "15.1.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "tailwind-merge": "^3.0.1",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwind-merge": "^3.0.1"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.6.1",
