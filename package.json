@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "engines": {
+    "engine-strict": "true",
     "node": "22.x",
     "bun": "1.x",
     "npm": "please-use-bun"
