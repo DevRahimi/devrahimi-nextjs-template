@@ -7,7 +7,7 @@ if [ $? -eq 0 ]; then
   echo "\033[0;32mFormatting passed.\033[0m"
 fi
 
-npm run build
+bun run build
 if [ $? -ne 0 ]; then
   echo "\033[0;31mBuild process failed. Push aborted.\033[0m"
   exit 1
