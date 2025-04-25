@@ -1,17 +1,24 @@
 "use client";
 
 import { Button, DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui";
+import type { buttonVariants } from "@/components/ui";
+import type { VariantProps } from "class-variance-authority";
 import { MoonIcon, SunIcon } from "lucide-react";
 import { useTheme } from "next-themes";
 
-export function ThemeToggle() {
+interface ThemeToggleProps {
+	buttonVariant?: VariantProps<typeof buttonVariants>["variant"];
+	// buttonSize?: VariantProps<typeof buttonVariants>["size"];
+}
+
+export function ThemeToggle({ buttonVariant = "outline" }: ThemeToggleProps) {
 	const { setTheme } = useTheme();
 
 	return (
 		<DropdownMenu>
 			<DropdownMenuTrigger asChild>
 				<Button
-					variant="outline"
+					variant={buttonVariant}
 					size="icon"
 				>
 					<SunIcon className="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
