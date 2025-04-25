@@ -1,10 +1,19 @@
-bun run format
+# bun run format
+# if [ $? -ne 0 ]; then
+#   echo "\033[0;31mFormatting failed. Push aborted.\033[0m"
+#   exit 1
+# fi
+# if [ $? -eq 0 ]; then
+#   echo "\033[0;32mFormatting passed.\033[0m"
+# fi
+
+bun run check
 if [ $? -ne 0 ]; then
-  echo "\033[0;31mFormatting failed. Push aborted.\033[0m"
+  echo "\033[0;31mBiome.js checks failed. Push aborted.\033[0m"
   exit 1
 fi
 if [ $? -eq 0 ]; then
-  echo "\033[0;32mFormatting passed.\033[0m"
+  echo "\033[0;32mBiome.js checks passed.\033[0m"
 fi
 
 bun run build

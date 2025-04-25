@@ -1,4 +1,4 @@
-bun run format
+bun run format --staged
 if [ $? -ne 0 ]; then
   echo "\033[0;31mFormatting failed. Commit aborted.\033[0m"
   exit 1
@@ -7,7 +7,7 @@ if [ $? -eq 0 ]; then
   echo "\033[0;32mFormatting passed.\033[0m"
 fi
 
-bun run lint
+bun run lint --staged
 if [ $? -ne 0 ]; then
   echo "\033[0;31mLinting failed. Commit aborted.\033[0m"
   exit 1
