@@ -1,6 +1,6 @@
 # Next.js + Bun Template
 
-A **Next.js** starter template powered by **Bun** for a smooth developer experience. This project uses **Husky**, **Commitlint**, **ESLint**, **Prettier**, a **.nvmrc** for Node version management, and includes a `.vscode` setup with recommended extensions and project-specific settings.
+A **Next.js** starter template powered by **Bun** for a smooth developer experience. This project uses **Husky**, **Biome.js**, **.nvmrc** for Node version management, and includes a `.vscode` setup with recommended extensions and project-specific settings.
 
 ## Requirements
 
@@ -12,12 +12,8 @@ A **Next.js** starter template powered by **Bun** for a smooth developer experie
 
 - **Next.js** with Turbopack in development (`next dev --turbopack`).
 - **Bun** for blazing-fast package management and scripts.
-- **ESLint** (extends `next`, `next/core-web-vitals`, `eslint:recommended`, and `prettier`) to catch common issues and enforce best practices.
-- **Prettier** with Tailwind CSS and import-sorting plugins for consistent styling:
-  - `@trivago/prettier-plugin-sort-imports`
-  - `prettier-plugin-tailwindcss`
+- **Biome.js** for code quality checks, formatting, and linting.
 - **Husky** to manage Git hooks (pre-commit, pre-push).
-- **Commitlint** for standardized commit messages.
 - **`.nvmrc`** set to `lts/*`, ensuring you’re always on the latest LTS version of Node.
 - **VS Code** recommended extensions and settings in `.vscode/`.
 
@@ -57,28 +53,32 @@ In your `package.json`, you’ll find these main scripts:
 - **`dev`**: Launches Next.js dev server with Turbopack.
 - **`build`**: Formats code, then builds Next.js production bundle with debug mode enabled.
 - **`start`**: Serves the production build on port 3001.
-- **`lint`**: Formats code, then runs ESLint.
-- **`lint-fix`**: Same as `lint` but automatically fixes fixable issues.
-- **`format`**: Runs Prettier to format all files.
-- **`check-format`**: Checks if files conform to Prettier rules.
-- **`prepare`**: Installs Husky hooks.
+- **`lint`**: Lints code using Biome.js.
+- **`format`**: Runs Biome.js to format all files.
+- **`check`**: Checks if files conform to Biome.js rules - runs `lint` and `format` in one command.
 - **`info`**: Displays info about your Next.js setup.
+- **`prepare`**: Installs Husky hooks.
 
 ## Linting & Formatting
 
-- **ESLint**
+- **Biome.js**
+  - This project uses Biome for linting and formatting. Configuration is located in biome.json.
+  - Code is formatted with tabs (2 spaces), double quotes, and semicolons.
+  - Imports are automatically organized.
+  - Linting rules are based on Biome's recommended settings, with some customized warnings related to accessibility, correctness, and security.
 
-  - Extends **Next**, **ESLint Recommended**, and **Prettier**.
-  - Warns on `no-console`, `no-unused-vars` (ignoring `_prefixed`), multiple empty lines, etc.
-  - Prefers double quotes, semicolons, and arrow callbacks.
+- ~~**ESLint**~~
+  - ~~Extends **Next**, **ESLint Recommended**, and **Prettier**.~~
+  - ~~Warns on `no-console`, `no-unused-vars` (ignoring `_prefixed`), multiple empty lines, etc.~~
+  - ~~Prefers double quotes, semicolons, and arrow callbacks.~~
 
-- **Prettier**
-  - **Plugins**:
-    - `@trivago/prettier-plugin-sort-imports` sorts and groups imports.
-    - `prettier-plugin-tailwindcss` sorts Tailwind classes (`tailwindConfig: "./tailwind.config.ts"`).
-  - **Key Options**:
-    - `tabWidth: 2`, `printWidth: 120`, `semi: true`, `singleQuote: false` (double quotes), `arrowParens: "always"`, `singleAttributePerLine`.
-    - Custom `importOrder` for modules and relative imports.
+- ~~**Prettier**~~
+  - ~~**Plugins**:~~
+    - ~~`@trivago/prettier-plugin-sort-imports` sorts and groups imports.~~
+    - ~~`prettier-plugin-tailwindcss` sorts Tailwind classes (`tailwindConfig: "./tailwind.config.ts"`).~~
+  - ~~**Key Options**:~~
+    - ~~`tabWidth: 2`, `printWidth: 120`, `semi: true`, `singleQuote: false` (double quotes), `arrowParens: "always"`, `singleAttributePerLine`.~~
+    - ~~Custom `importOrder` for modules and relative imports.~~
 
 ## Git Hooks & Commit Messages
 
@@ -89,7 +89,7 @@ In your `package.json`, you’ll find these main scripts:
 
 In the `.vscode/` folder, you’ll find:
 
-- **`extensions.json`**: Recommends installing ESLint and Prettier.
+- **`extensions.json`**: Recommends installing Biome.js.
 - **`settings.json`**: Preconfigured to automatically organize and sort imports on save.
 
 ## License
