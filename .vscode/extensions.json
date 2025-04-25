@@ -3,7 +3,7 @@
     "ms-vscode.vscode-typescript-next",
     "yoavbls.pretty-ts-errors",
     "dbaeumer.vscode-eslint",
-    "esbenp.prettier-vscode",
+    "biomejs.biome",
     "bradlc.vscode-tailwindcss",
     "formulahendry.auto-rename-tag",
     "vincaslt.highlight-matching-tag",
