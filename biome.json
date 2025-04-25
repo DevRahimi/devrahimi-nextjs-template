@@ -31,7 +31,8 @@
 			},
 			"correctness": {
 				"useExhaustiveDependencies": "warn",
-				"noUnusedVariables": "warn"
+				"noUnusedVariables": "warn",
+				"noUnusedImports": "warn"
 			},
 			"suspicious": {
 				"noArrayIndexKey": "off"
