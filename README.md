@@ -126,11 +126,3 @@ In the `.vscode/` folder, you'll find:
 This project uses [shadcn/ui](https://ui.shadcn.com/) as its component library, providing a set of beautifully-designed, accessible, and customizable React components. Theming is handled with [next-themes](https://github.com/pacocoursey/next-themes), allowing for seamless light/dark/system theme switching.
 
 To further customize the look and feel of your shadcn/ui components, you can use [TweakCN](https://tweakcn.com/), a visual tool for editing and previewing shadcn themes.
-
-## License
-
-MIT
-
-## Contributing
-
-Feel free to open issues or pull requests. Make sure your code is linted and your commit messages pass Commitlint checks!
