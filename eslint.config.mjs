@@ -23,6 +23,7 @@ const eslintConfig = [
       "eslint:recommended",
       "plugin:react/recommended",
       "plugin:@typescript-eslint/recommended",
+      "plugin:@next/next/recommended",
       "prettier",
     ],
     plugins: ["react", "@typescript-eslint"],
