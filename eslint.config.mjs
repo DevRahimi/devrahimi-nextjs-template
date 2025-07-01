@@ -1,5 +1,4 @@
 import { FlatCompat } from "@eslint/eslintrc";
-import js from "@eslint/js";
 import { dirname } from "path";
 import { fileURLToPath } from "url";
 
@@ -8,7 +7,6 @@ const __dirname = dirname(__filename);
 
 const compat = new FlatCompat({
   baseDirectory: __dirname,
-  recommendedConfig: js.configs.recommended,
 });
 
 const eslintConfig = [
@@ -16,7 +14,16 @@ const eslintConfig = [
     globals: {
       React: "readonly",
     },
-    extends: ["next", "next/core-web-vitals", "next/typescript", "eslint:recommended"],
+    extends: [
+      "next",
+      "next/core-web-vitals",
+      "next/typescript",
+      "eslint:recommended",
+      "plugin:react/recommended",
+      "plugin:@typescript-eslint/recommended",
+      "prettier",
+    ],
+    plugins: ["react", "@typescript-eslint"],
     ignorePatterns: [
       ".next",
       ".vercel",
@@ -27,6 +34,7 @@ const eslintConfig = [
       ".DS_Store",
       "*.css",
       "*.config.js",
+      "*.config.mjs",
       "*.config.ts",
     ],
     rules: {
