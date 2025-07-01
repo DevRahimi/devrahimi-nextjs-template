@@ -1,36 +1,76 @@
 "use client";
 
-import { Button, DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui";
-import type { buttonVariants } from "@/components/ui";
-import type { VariantProps } from "class-variance-authority";
-import { MoonIcon, SunIcon } from "lucide-react";
+import { useCallback, useEffect, useState } from "react";
 import { useTheme } from "next-themes";
+import type { VariantProps } from "class-variance-authority";
+import { LaptopIcon, MoonIcon, SunIcon } from "lucide-react";
+import { Button, type buttonVariants } from "@/components/ui";
+import { Theme } from "@/types";
+import { cn } from "@/utils";
+
+const THEME_KEYBOARD_SHORTCUT = "m";
 
 interface ThemeToggleProps {
-	buttonVariant?: VariantProps<typeof buttonVariants>["variant"];
-	// buttonSize?: VariantProps<typeof buttonVariants>["size"];
+  buttonVariant?: VariantProps<typeof buttonVariants>["variant"];
 }
 
 export function ThemeToggle({ buttonVariant = "outline" }: ThemeToggleProps) {
-	const { setTheme } = useTheme();
+  const { theme, themes, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
-	return (
-		<DropdownMenu>
-			<DropdownMenuTrigger asChild>
-				<Button
-					variant={buttonVariant}
-					size="icon"
-				>
-					<SunIcon className="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
-					<MoonIcon className="absolute h-[1.2rem] w-[1.2rem] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
-					<span className="sr-only">Toggle theme</span>
-				</Button>
-			</DropdownMenuTrigger>
-			<DropdownMenuContent align="end">
-				<DropdownMenuItem onClick={() => setTheme("light")}>Light</DropdownMenuItem>
-				<DropdownMenuItem onClick={() => setTheme("dark")}>Dark</DropdownMenuItem>
-				<DropdownMenuItem onClick={() => setTheme("system")}>System</DropdownMenuItem>
-			</DropdownMenuContent>
-		</DropdownMenu>
-	);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const toggleTheme = useCallback(() => {
+    const getNextTheme = (current: Theme): Theme => {
+      const idx = themes.indexOf(current);
+      return themes[(idx + 1) % themes.length] as Theme;
+    };
+
+    setTheme(getNextTheme(theme as Theme));
+  }, [setTheme, theme, themes]);
+
+  // theme toggle event listener
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === THEME_KEYBOARD_SHORTCUT && (event.metaKey || event.ctrlKey)) {
+        event.preventDefault();
+        toggleTheme();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [toggleTheme]);
+
+  if (!mounted) return null;
+
+  return (
+    <Button
+      variant={buttonVariant}
+      size="icon"
+      onClick={toggleTheme}
+    >
+      <SunIcon
+        className={cn(
+          "absolute transition-all",
+          theme === "light" ? "scale-100 rotate-0 opacity-100" : "scale-0 -rotate-90 opacity-0"
+        )}
+      />
+      <MoonIcon
+        className={cn(
+          "absolute transition-all",
+          theme === "dark" ? "scale-100 rotate-0 opacity-100" : "scale-0 -rotate-90 opacity-0"
+        )}
+      />
+      <LaptopIcon
+        className={cn(
+          "absolute transition-all",
+          theme === "system" ? "scale-100 rotate-0 opacity-100" : "scale-0 -rotate-90 opacity-0"
+        )}
+      />
+      <span className="sr-only absolute">Toggle Theme</span>
+    </Button>
+  );
 }
