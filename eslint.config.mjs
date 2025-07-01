@@ -26,7 +26,7 @@ const eslintConfig = [
       "plugin:@next/next/recommended",
       "prettier",
     ],
-    plugins: ["react", "@typescript-eslint"],
+    plugins: ["react", "@typescript-eslint", "@next/next"],
     ignorePatterns: [
       ".next",
       ".vercel",
