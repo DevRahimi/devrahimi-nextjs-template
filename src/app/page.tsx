@@ -11,7 +11,9 @@ export default function Home() {
           <span className="text-violet-500">DevRahimi</span> <span className="text-foreground">Next.js Template</span>
         </h1>
         <p className="text-muted-foreground mt-4 max-w-2xl text-lg sm:text-xl">
-          A simple Next.js starter, with TailwindCSS and shadcn/ui
+          A simple <span className="text-foreground font-semibold">Next.js</span> starter, with{" "}
+          <span className="text-foreground font-semibold">TailwindCSS</span> and{" "}
+          <span className="text-foreground font-semibold">shadcn/ui</span>
         </p>
         <div className="mt-6 flex items-center justify-center space-x-2">
           <div className="h-1 w-8 rounded-full bg-violet-500"></div>
