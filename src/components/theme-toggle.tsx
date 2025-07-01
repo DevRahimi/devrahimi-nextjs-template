@@ -33,6 +33,7 @@ export function ThemeToggle({ buttonVariant = "outline" }: ThemeToggleProps) {
 
   // theme toggle event listener
   useEffect(() => {
+    // eslint-disable-next-line no-undef
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === THEME_KEYBOARD_SHORTCUT && (event.metaKey || event.ctrlKey)) {
         event.preventDefault();

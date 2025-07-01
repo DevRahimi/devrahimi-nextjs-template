@@ -13,7 +13,7 @@
     "dev": "next dev --turbopack",
     "build": "next build --debug",
     "start": "next start --port 3001",
-    "lint": "next lint --max-warnings=0 --config ./eslint.config.mjs",
+    "lint": "next lint --max-warnings=0 --config ./eslint.config.mjs --dir src",
     "format": "prettier . --write --config-precedence prefer-file ./prettier.config.mjs",
     "info": "next info",
     "prepare": "husky"
@@ -36,15 +36,15 @@
     "tailwind-merge": "^3.2.0"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3.3.1",
-    "@eslint/js": "^9.30.0",
+    "@next/eslint-plugin-next": "^15.3.4",
     "@tailwindcss/postcss": "^4.1.4",
     "@trivago/prettier-plugin-sort-imports": "^5.2.2",
     "@types/node": "^22.15.2",
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
-    "eslint": "^9.30.0",
-    "eslint-config-next": "^15.3.4",
+    "@typescript-eslint/eslint-plugin": "^8.35.1",
+    "@typescript-eslint/parser": "^8.35.1",
+    "eslint": "^9.30.1",
     "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-prettier": "^5.5.1",
     "eslint-plugin-react": "^7.37.5",
